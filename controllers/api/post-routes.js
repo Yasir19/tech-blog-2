@@ -1,13 +1,7 @@
 const router = require("express").Router();
 const { Post, Comment, User } = require("../../models/");
 const withAuth = require("../../utils/auth");
-const multer = require("multer");
 
-const upload = multer({ dest: "../../public/files" });
-router.post("/api/uploadFile", upload.single("myFile"), (req, res) => {
-  // Stuff to be added later
-  console.log(req.file);
-});
 
 
 router.post("/", withAuth, (req, res) => {
